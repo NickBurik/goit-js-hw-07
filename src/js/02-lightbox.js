@@ -4,7 +4,7 @@ import { galleryItems } from "./gallery-items.js";
 console.log(galleryItems);
 
 const galleryContainer = document.querySelector(".gallery");
-const galleryItem = createGalleryItem(galleryItems);
+const galleryItem = createGalleryCards(galleryItems);
 
 galleryContainer.insertAdjacentHTML("beforeend", galleryItem);
 galleryContainer.addEventListener("click", onGalleryContainerClick);
@@ -14,7 +14,7 @@ const lightbox = new SimpleLightbox(".gallery a", {
   captionDelay: 250,
 });
 
-function createGalleryItem(galleryItems) {
+function createGalleryCards(galleryItems) {
   return galleryItems
     .map(({ preview, original, description }) => {
       return `
